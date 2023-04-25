@@ -12,7 +12,9 @@ function PasswordPage(){
   return(
       <div className="Auth-form-content">
         <button className='back-button'> &larr; Go back</button>
-        <img className="security-image-icon" src={ require('../../images/personIcon.jpeg') } />
+        <div class="center-image">
+          <img className="security-image-icon" src={ require('../../images/personIcon.jpeg') } />
+        </div>
         <div className="form-group mt-3">
             <label>Password</label>
             <input

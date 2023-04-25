@@ -1,12 +1,13 @@
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 
-function UsernamePage(){
+function UsernamePage(props){
 
-  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
 
-  function redirectHomePage(){
-    navigate("/home");
-  }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.onSubmit(username);
+  };
 
   return(
       <div className="Auth-form-content">
@@ -15,12 +16,14 @@ function UsernamePage(){
           <label>Username</label>
           <input
             type="text"
+            value={username}
+            onChange={(event) => setUsername(event.target.value)}
             className="form-control mt-1"
             placeholder="Enter username"
           />
         </div>
         <div className="d-grid gap-2 mt-3">
-          <button onClick={redirectHomePage} type="next" className="btn btn-primary">
+          <button onClick={handleSubmit} type="next" className="btn btn-primary">
             Next
           </button>
         </div>
