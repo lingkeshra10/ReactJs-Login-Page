@@ -24,6 +24,7 @@ function Auth() {
       <div className="Auth-form-container">
         <form className="Auth-form">
           <PasswordPage username={username} />
+          <PasswordPage onSubmit={handleUsernameSubmit}/>
         </form>
       </div>
     );

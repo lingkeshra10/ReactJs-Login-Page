@@ -16,14 +16,13 @@ function UsernamePage(props){
           <label>Username</label>
           <input
             type="text"
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
             className="form-control mt-1"
             placeholder="Enter username"
           />
         </div>
         <div className="d-grid gap-2 mt-3">
-          <button onClick={handleSubmit} type="next" className="btn btn-primary">
+          <button onClick={handleSubmit} value={username}
+            onChange={(event) => setUsername(event.target.value)} type="next" className="btn btn-primary">
             Next
           </button>
         </div>

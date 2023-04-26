@@ -9,9 +9,13 @@ function PasswordPage(){
     navigate("/home");
   }
 
+  function goBack(){
+    navigate(-1); // navigate back to the previous page
+  }
+
   return(
       <div className="Auth-form-content">
-        <button className='back-button'> &larr; Go back</button>
+        <button className='back-button' onClick={goBack}> &larr; Go back</button>
         <div class="center-image">
           <img className="security-image-icon" src={ require('../../images/personIcon.jpeg') } />
         </div>
